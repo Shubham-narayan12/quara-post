@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Form</title>
+</head>
+<body>
+    <h1>Edit your form</h1>
+    <div class="from">
+        
+        <p>Id:<%= user.id %></p>
+        <P>username: <%= user.username %></P>
+
+
+        <form method="post" action="/quara/<%= user.id%>?_method=PATCH">
+            <textarea name="content"><%=user.content%></textarea>
+            <button>Edit</button>
+        </form>
+        
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quara</title>
+</head>
+<body>
+    <div class="heading">
+        <h2>Quara Posts</h2>  
+    </div>
+
+    <% for(let x of values) {%> 
+    <div class="cards">
+         <!-- <p class="id">id: <%= x.id %></p>  -->
+        <p class="name">username : <%= x.username %></p>
+        <div class="content">
+            <p class="text"> content:<%= x.content %></p>
+            <a href="http://localhost:3000/quara/<%=x.id%>">See Details</a>
+            <a href="http://localhost:3000/quara/<%=x.id%>/edit">Edit</a>
+            <form method="post" action="/quara/<%= x.id %>?_method=DELETE">
+                <button>Delete</button>
+            </form>
+        </div>
+        <br/>
+        <br/>
+    </div>
+
+    <% }%>
+
+    <div class="newPost">
+        <a href="http://localhost:3000/quara/newPost">Create New Post</a>
+    </div>
+</body>
+</html>
